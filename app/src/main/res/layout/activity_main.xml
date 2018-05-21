@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:background="#000"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <!--顶部四个按钮-->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="center"
+            android:background="@color/dark_gray"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/dialing"
+                android:layout_width="@dimen/cal_top_pic_width"
+                android:layout_height="@dimen/cal_top_pic_width" />
+            <TextView
+                android:layout_marginTop="@dimen/cal_top_text_marginTop"
+                android:textColor="#fff"
+                android:text="拨号"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/record"
+                android:layout_width="@dimen/cal_top_pic_width"
+                android:layout_height="@dimen/cal_top_pic_width" />
+            <TextView
+                android:layout_marginTop="@dimen/cal_top_text_marginTop"
+                android:textColor="#fff"
+                android:text="通话记录"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+
+            android:padding="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/contract"
+                android:layout_width="@dimen/cal_top_pic_width"
+                android:layout_height="@dimen/cal_top_pic_width" />
+            <TextView
+                android:layout_marginTop="@dimen/cal_top_text_marginTop"
+                android:textColor="#fff"
+                android:text="通讯录"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@mipmap/collect"
+                android:layout_width="@dimen/cal_top_pic_width"
+                android:layout_height="@dimen/cal_top_pic_width" />
+            <TextView
+                android:layout_marginTop="@dimen/cal_top_text_marginTop"
+                android:textColor="#fff"
+                android:text="收藏"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_margin="5dp"
+        android:paddingRight="5dp"
+        android:paddingLeft="5dp"
+        android:gravity="center_vertical"
+        android:textSize="40sp"
+        android:textColor="#fff"
+        android:background="#202121"
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+    <!--底部的按钮-->
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/dial_bottom_shape"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:scaleType="fitCenter"
+            android:background="#00ffffff"
+            android:padding="5dp"
+            android:src="@mipmap/share"
+            android:layout_width="@dimen/cal_bottom_pic_small"
+            android:layout_height="@dimen/cal_bottom_pic_small" />
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="@dimen/cal_bottom_margin"
+            android:background="#aeadad"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:scaleType="fitCenter"
+            android:background="#00ffffff"
+            android:padding="5dp"
+            android:src="@mipmap/phone"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <View
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="@dimen/cal_bottom_margin"
+            android:background="#aeadad"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"/>
+        <ImageButton
+            android:scaleType="fitCenter"
+            android:background="#00ffffff"
+            android:id="@+id/ivDelete"
+            android:padding="5dp"
+            android:src="@mipmap/delete"
+            android:layout_width="@dimen/cal_bottom_pic_small"
+            android:layout_height="@dimen/cal_bottom_pic_small" />
+
+    </LinearLayout>
+
+</LinearLayout>

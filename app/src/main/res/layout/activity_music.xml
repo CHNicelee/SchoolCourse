@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/jay"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <android.support.v7.widget.Toolbar
+        android:fitsSystemWindows="true"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <ImageView
+            android:scaleType="fitCenter"
+            android:src="@mipmap/back"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:textColor="#fff"
+            android:text="周杰伦"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:id="@+id/center"
+        android:layout_centerHorizontal="true"
+        android:layout_width="1dp"
+        android:layout_height="@dimen/music_button_height"/>
+    <Button
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="30dp"
+        android:layout_alignBottom="@id/iv_pic"
+        android:layout_toLeftOf="@id/center"
+        android:id="@+id/btn_song"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/music_button_height"
+        android:background="@drawable/shape_music_left_button"
+        android:text="歌曲" />
+
+    <Button
+
+        android:layout_marginBottom="30dp"
+        android:layout_alignBottom="@id/iv_pic"
+        android:layout_toRightOf="@id/center"
+        android:id="@+id/btn_album"
+        android:layout_width="100dp"
+        android:layout_height="@dimen/music_button_height"
+        android:background="@drawable/shape_music_right_button"
+        android:text="专辑" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_below="@id/iv_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+
+
+
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cal_top_pic_width">40dp</dimen>
+    <dimen name="cal_top_text_marginTop">5dp</dimen>
+    <dimen name="cal_bottom_margin">30dp</dimen>
+    <dimen name="cal_bottom_pic_small">40dp</dimen>
+    <dimen name="music_button_height">30dp</dimen>
+</resources>

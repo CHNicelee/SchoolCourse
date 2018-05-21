@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:src="@mipmap/jay"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+    <TextView
+        android:padding="5dp"
+        android:background="#a8636363"
+        android:textColor="#fff"
+        android:text="最美的不是下雨天"
+        android:layout_alignBottom="@id/imageView"
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
