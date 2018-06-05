@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools">
 
     <ImageView
-        android:src="@mipmap/jay"
+        tool:src="@mipmap/jay"
         android:scaleType="centerCrop"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
@@ -13,7 +14,7 @@
         android:padding="5dp"
         android:background="#a8636363"
         android:textColor="#fff"
-        android:text="最美的不是下雨天"
+        tool:text="最美的不是下雨天"
         android:layout_alignBottom="@id/imageView"
         android:id="@+id/title"
         android:layout_width="match_parent"

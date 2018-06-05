@@ -1,4 +1,4 @@
-package csu.edu.ice.schoolcourse;
+package csu.edu.ice.schoolcourse.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import csu.edu.ice.schoolcourse.R;
 
 /**
  * Created by ice on 2018/5/10.
@@ -64,7 +66,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
             public MyViewHolder(View itemView) {
                 super(itemView);
 
-                textView = itemView.findViewById(R.id.tv_news);
+                textView = itemView.findViewById(R.id.tv_title);
             }
         }
     }

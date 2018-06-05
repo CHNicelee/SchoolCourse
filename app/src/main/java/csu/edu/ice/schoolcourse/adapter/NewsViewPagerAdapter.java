@@ -11,8 +11,8 @@ import csu.edu.ice.schoolcourse.fragment.NewsItemFragment;
 
 public class NewsViewPagerAdapter extends FragmentPagerAdapter {
 
-    String[] titles = {"体育","娱乐","军事","政治","体育","娱乐","军事","政治"};
-
+    String[] titles = {"头条","社会","国内","国际","娱乐","体育","军事","科技","财经","时尚"};
+    String[] types = {"top","shehui","guonei","guoji","yule","tiyu","junshi","keji","caijing","shishang"};
     public NewsViewPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -20,6 +20,7 @@ public class NewsViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public android.support.v4.app.Fragment getItem(int position) {
         NewsItemFragment newsItemFragment = new NewsItemFragment();
+        newsItemFragment.setArguments(types[position]);
         return newsItemFragment;
     }
 

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="csu.edu.ice.schoolcourse.activity.NewsDetailActivity">
+    <android.support.v7.widget.Toolbar
+        android:theme="@style/AppTheme.Dark"
+        android:id="@+id/toolbar"
+        app:title="新闻详情"
+        app:titleTextColor="#fff"
+        android:background="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+    <WebView
+        android:layout_weight="1"
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/commentWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:minHeight="40dp"
+            android:hint="编辑评论"
+            android:background="@drawable/shape_edittext_comment"
+            android:layout_weight="1"
+            android:id="@+id/et_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/btn_comment"
+            android:text="评论"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

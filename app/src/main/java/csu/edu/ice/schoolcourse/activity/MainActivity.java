@@ -1,4 +1,4 @@
-package csu.edu.ice.schoolcourse;
+package csu.edu.ice.schoolcourse.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import csu.edu.ice.schoolcourse.R;
 
 public class MainActivity extends AppCompatActivity  implements View.OnClickListener{
     private RecyclerView recyclerView;

@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="csu.edu.ice.schoolcourse.NewsActivity">
+    tools:context="csu.edu.ice.schoolcourse.activity.NewsActivity">
 
     <FrameLayout
         android:id="@+id/container"
@@ -14,62 +14,40 @@
         android:layout_height="0dp"></FrameLayout>
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:checkedButton="@id/rb_news"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RadioButton
+
+            style="@style/TabBottomStyle"
             android:id="@+id/rb_news"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:gravity="center"
-            android:button="@null"
             android:drawableTop="@drawable/selector_news_radio_button"
-            android:text="新闻"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <RadioButton
-            android:layout_width="74dp"
-
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/selector_news_radio_button"
-            android:gravity="center"
-            android:padding="5dp"
             android:text="新闻" />
-        <RadioButton
-            android:layout_weight="1"
 
-            android:padding="5dp"
-            android:gravity="center"
-            android:button="@null"
-            android:drawableTop="@drawable/selector_news_radio_button"
-            android:text="新闻"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
         <RadioButton
-            android:layout_weight="1"
+            android:id="@+id/rb_video"
+            style="@style/TabBottomStyle"
+            android:drawableTop="@drawable/selector_video_radio_button"
+            android:text="视频" />
 
-            android:padding="5dp"
-            android:gravity="center"
-            android:button="@null"
-            android:drawableTop="@drawable/selector_news_radio_button"
-            android:text="新闻"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
         <RadioButton
-            android:layout_weight="1"
-
-            android:padding="5dp"
-            android:gravity="center"
-            android:button="@null"
-            android:drawableTop="@drawable/selector_news_radio_button"
-            android:text="新闻"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:id="@+id/rb_leaf"
+            style="@style/TabBottomStyle"
+            android:drawableTop="@drawable/selector_leaf_radio_button"
+            android:text="芭蕉" />
+        <RadioButton
+            android:id="@+id/rb_live"
+            style="@style/TabBottomStyle"
+            android:drawableTop="@drawable/selector_live_radio_button"
+            android:text="直播"/>
+        <RadioButton
+            android:id="@+id/rb_me"
+            style="@style/TabBottomStyle"
+            android:drawableTop="@drawable/selector_me_radio_button"
+            android:text="我"/>
 
     </RadioGroup>
 

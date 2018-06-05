@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.astuetz.PagerSlidingTabStrip;
+import com.viewpagerindicator.TabPageIndicator;
 
 import csu.edu.ice.schoolcourse.R;
 import csu.edu.ice.schoolcourse.adapter.NewsViewPagerAdapter;
@@ -20,7 +20,7 @@ import csu.edu.ice.schoolcourse.adapter.NewsViewPagerAdapter;
 public class NewsFragment extends Fragment {
 
     private ViewPager viewPager;
-    private PagerSlidingTabStrip tabStrip;
+    private TabPageIndicator tabStrip;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

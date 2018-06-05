@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:gravity="center_vertical"
     android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:id="@+id/root"
+    android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_weight="1"
+    android:layout_width="wrap_content"
+    android:padding="5dp"
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/tv_news"
-        android:layout_weight="1"
-        android:layout_width="0dp"
+        android:textSize="15sp"
+        android:textColor="#000"
+        android:text="张雪迎新剧开启带货模式，亲民定位粉丝穿得起，向女王幂靠拢"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <TextView
+        android:text="人民网"
+        android:layout_marginTop="10dp"
+        android:id="@+id/tv_author_name"
+        android:layout_below="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_title"
+        android:layout_toRightOf="@id/tv_author_name"
+        android:text="2018-06-02 09:46"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+
     <ImageView
         android:src="@mipmap/collect"
-        android:id="@+id/iv_pic"
+        android:id="@+id/iv_thumbnail"
         android:layout_width="150dp"
         android:layout_height="100dp" />
 </LinearLayout>

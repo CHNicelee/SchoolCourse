@@ -1,4 +1,4 @@
-package csu.edu.ice.schoolcourse;
+package csu.edu.ice.schoolcourse.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+
+import csu.edu.ice.schoolcourse.R;
 
 /**
  * Created by ice on 2018/5/15.

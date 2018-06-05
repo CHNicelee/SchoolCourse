@@ -1,4 +1,4 @@
-package csu.edu.ice.schoolcourse;
+package csu.edu.ice.schoolcourse.activity;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
+
+import csu.edu.ice.schoolcourse.R;
 
 public class QQActivity extends AppCompatActivity {
     private TextView tvChoice;
