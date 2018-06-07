@@ -28,12 +28,12 @@ public class NewsFragment extends Fragment {
         viewPager = view.findViewById(R.id.viewPager);
         tabStrip = view.findViewById(R.id.tabStrip);
 
-        viewPager.setAdapter(new NewsViewPagerAdapter(getActivity().getSupportFragmentManager()));
+        final NewsViewPagerAdapter adapter = new NewsViewPagerAdapter(getActivity().getSupportFragmentManager());
+        viewPager.setAdapter(adapter);
         tabStrip.setViewPager(viewPager);
+
+
         return view;
     }
-
-
-
 
 }

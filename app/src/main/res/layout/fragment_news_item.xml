@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
     <android.support.design.widget.AppBarLayout
         android:clipChildren="false"
         android:background="#fff"
@@ -13,11 +15,14 @@
             app:layout_scrollFlags="scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <android.support.v4.view.ViewPager
+                android:visibility="gone"
                 android:clipChildren="false"
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"/>
+
             <LinearLayout
                 android:gravity="center"
                 android:layout_marginBottom="40dp"
@@ -30,11 +35,18 @@
         </RelativeLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.RecyclerView
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+        <android.support.v7.widget.RecyclerView
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" />
 
 </android.support.design.widget.CoordinatorLayout>

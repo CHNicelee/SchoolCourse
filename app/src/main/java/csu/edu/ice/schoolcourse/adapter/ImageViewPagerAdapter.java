@@ -1,5 +1,6 @@
 package csu.edu.ice.schoolcourse.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.view.PagerAdapter;
@@ -13,7 +14,9 @@ import java.util.List;
 import csu.edu.ice.schoolcourse.R;
 import csu.edu.ice.schoolcourse.bean.News;
 import csu.edu.ice.schoolcourse.network.ImageAsyncTask;
+import csu.edu.ice.schoolcourse.utils.DiskCacheUtil;
 import csu.edu.ice.schoolcourse.utils.ImageCache;
+import csu.edu.ice.schoolcourse.utils.Utils;
 
 /**
  * Created by ice on 2018/5/18.
@@ -25,6 +28,7 @@ public class ImageViewPagerAdapter extends PagerAdapter {
     List<News> newsList;
     View[] views;
     ImageCache imageCache;
+
     public ImageViewPagerAdapter(List<News> newsList,Context context) {
         this.newsList = newsList;
         this.context = context;
@@ -35,26 +39,35 @@ public class ImageViewPagerAdapter extends PagerAdapter {
         imageCache = new ImageCache(cacheSize);
     }
 
+    @SuppressLint("StaticFieldLeak")
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, int position) {
         if(views[position]==null){
             final News news = newsList.get(position);
-            View v = View.inflate(context, R.layout.item_top_image,null);
+            final View v = View.inflate(context, R.layout.item_top_image,null);
             final ImageView imageView = v.findViewById(R.id.imageView);
             TextView textView = v.findViewById(R.id.title);
             textView.setText(news.getTitle());
 
             final Bitmap cacheBitmap = imageCache.get(news.getThumbnail_pic_s());
+
             if(cacheBitmap!=null){
                 imageView.setImageBitmap(cacheBitmap);
             }else{
-                new ImageAsyncTask(){
-                    @Override
-                    public void onPostExecute(Bitmap bitmap) {
-                        imageView.setImageBitmap(bitmap);
-                        imageCache.put(news.getThumbnail_pic_s(),bitmap);
-                    }
-                }.execute(news.getThumbnail_pic_s());
+
+                Bitmap bitmap = DiskCacheUtil.getBitmap(context,  Utils.getMD5String(news.getThumbnail_pic_s()));
+                if(bitmap!=null){
+                    imageView.setImageBitmap(bitmap);
+                }else {
+                    new ImageAsyncTask() {
+                        @Override
+                        public void onPostExecute(Bitmap bitmap) {
+                            imageView.setImageBitmap(bitmap);
+                            imageCache.put(news.getThumbnail_pic_s(), bitmap);
+                            DiskCacheUtil.saveBitmap(context, Utils.getMD5String(news.getThumbnail_pic_s()), bitmap);
+                        }
+                    }.execute(news.getThumbnail_pic_s());
+                }
             }
 
             views[position] = v;
@@ -78,8 +91,5 @@ public class ImageViewPagerAdapter extends PagerAdapter {
         container.removeView(views[position]);
     }
 
-    @Override
-    public float getPageWidth(int position) {
-        return 1;
-    }
+
 }

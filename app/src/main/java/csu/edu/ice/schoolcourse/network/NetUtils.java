@@ -46,6 +46,7 @@ public class NetUtils {
             while ((len=is.read(buffer))>0){
                 bos.write(buffer,0,len);
             }
+            is.close();
             return bos.toString();
         } catch (Exception e) {
             e.printStackTrace();

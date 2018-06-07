@@ -13,6 +13,11 @@
         <item name="colorControlNormal">#fff</item>
     </style>
 
+    <style name="BackTheme" parent="AppTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
     <style name="TabBottomStyle">
         <item name="android:layout_width">wrap_content</item>

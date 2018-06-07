@@ -1,5 +1,6 @@
 package csu.edu.ice.schoolcourse.adapter;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -16,7 +17,9 @@ import csu.edu.ice.schoolcourse.R;
 import csu.edu.ice.schoolcourse.activity.NewsDetailActivity;
 import csu.edu.ice.schoolcourse.bean.News;
 import csu.edu.ice.schoolcourse.network.ImageAsyncTask;
+import csu.edu.ice.schoolcourse.utils.DiskCacheUtil;
 import csu.edu.ice.schoolcourse.utils.ImageCache;
+import csu.edu.ice.schoolcourse.utils.Utils;
 
 /**
  * Created by ice on 2018/5/18.
@@ -43,6 +46,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
         return new MyViewHolder(view);
     }
 
+    @SuppressLint("StaticFieldLeak")
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
@@ -51,23 +55,29 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder>{
         holder.tvDate.setText(news.getDate().substring(10));
         holder.tvAuthorName.setText(news.getAuthorName());
         holder.ivThumbnail.setTag(news.getThumbnail_pic_s());
-        holder.ivThumbnail.setImageBitmap(null);
+        holder.ivThumbnail.setImageDrawable(context.getResources().getDrawable(R.mipmap.default_pic));
         Log.d(TAG, "onBindViewHolder: "+news.getThumbnail_pic_s());
 
         final Bitmap cacheBitmap = imageCache.get(news.getThumbnail_pic_s());
         if(cacheBitmap!=null){
             holder.ivThumbnail.setImageBitmap(cacheBitmap);
         }else{
-            new ImageAsyncTask(){
-                @Override
-                public void onPostExecute(Bitmap bitmap) {
-                    if(bitmap == null)return;
-                    if(holder.ivThumbnail.getTag().equals(news.getThumbnail_pic_s())) {
-                        holder.ivThumbnail.setImageBitmap(bitmap);
-                        imageCache.put(news.getThumbnail_pic_s(),bitmap);
+            Bitmap bitmap = DiskCacheUtil.getBitmap(context, Utils.getMD5String(news.getThumbnail_pic_s()));
+            if(bitmap!=null){
+                holder.ivThumbnail.setImageBitmap(bitmap);
+            }else {
+                new ImageAsyncTask() {
+                    @Override
+                    public void onPostExecute(Bitmap bitmap) {
+                        if (bitmap == null) return;
+                        if (holder.ivThumbnail.getTag().equals(news.getThumbnail_pic_s())) {
+                            holder.ivThumbnail.setImageBitmap(bitmap);
+                            imageCache.put(news.getThumbnail_pic_s(), bitmap);
+                            DiskCacheUtil.saveBitmap(context,Utils.getMD5String(news.getThumbnail_pic_s()),bitmap);
+                        }
                     }
-                }
-            }.execute(news.getThumbnail_pic_s());
+                }.execute(news.getThumbnail_pic_s());
+            }
         }
 
         holder.root.setOnClickListener(new View.OnClickListener() {

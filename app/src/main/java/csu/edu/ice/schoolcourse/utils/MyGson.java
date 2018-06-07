@@ -30,7 +30,6 @@ public class MyGson {
 
     }
 
-
     public <T> List<T> fromJsonArray(Object array, Class<T> clazz) {
         log("fromJsonArray:" + array.toString());
         try {
@@ -141,6 +140,7 @@ public class MyGson {
     public @interface SerializeName {
         String value();
     }
+
 }
 
 

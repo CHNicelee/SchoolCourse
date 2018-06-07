@@ -5,8 +5,8 @@
     xmlns:tool="http://schemas.android.com/tools">
 
     <ImageView
-        tool:src="@mipmap/jay"
         android:scaleType="centerCrop"
+        android:src="@mipmap/default_pic"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="200dp" />

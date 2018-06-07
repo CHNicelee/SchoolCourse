@@ -46,6 +46,7 @@ public class NewsActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         hideFragments();
 
+        String text ="";
         switch (checkedId){
 
             case R.id.rb_news:
@@ -56,18 +57,35 @@ public class NewsActivity extends AppCompatActivity implements RadioGroup.OnChec
                 }else {
                     transaction.show(newsFragment);
                 }
-                break;
+                transaction.commit();
+                return;
 
             case R.id.rb_video:
                 //视频
-                if(videoFragment == null){
-                    videoFragment = new VideoFragment();
-                    transaction.add(R.id.container,videoFragment);
-                    fragmentList.add(videoFragment);
-                }else {
-                    transaction.show(videoFragment);
-                }
+                text="视频";
                 break;
+            case R.id.rb_leaf:
+                text="叶子";
+                break;
+            case R.id.rb_live:
+                text="直播";
+                break;
+            case R.id.rb_me:
+                text="我";
+                break;
+
+        }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("text",text);
+        if(videoFragment == null){
+            videoFragment = new VideoFragment();
+            videoFragment.setArguments(bundle);
+            transaction.add(R.id.container,videoFragment);
+            fragmentList.add(videoFragment);
+        }else {
+            videoFragment.setArguments(bundle);
+            transaction.show(videoFragment);
         }
         transaction.commit();
     }
